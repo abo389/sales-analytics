@@ -23,7 +23,6 @@ fetch( 'http://localhost:8000/backend/api/analytics' )
 socket.addEventListener( 'message', ( event ) =>
 {
   const data = JSON.parse( event.data );
-  console.log( data );
   if ( data.type === "order" ) updateOrders( data.data );
   if ( data.type === 'analytic' ) updateAnalytics( data.data );
 } );
@@ -41,7 +40,6 @@ function updateOrders (order)
 
 function updateAnalytics ( data )
 {
-  console.log(data)
   totalRevenueEl.textContent = `$${ data.total_revenue }`;
   revenueLastMinuteEl.textContent = `$${ data.last_minute_revenue || 0 }`;
   ordersLastMinuteEl.textContent = data.order_count_last_minute;

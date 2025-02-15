@@ -1,5 +1,4 @@
 var socket = new WebSocket( "ws://127.0.0.1:8060" );
-socket.onmessage = ( e ) => console.log( JSON.parse( e.data ) );
 
 var products = [];
 var quantities = [];
@@ -88,8 +87,6 @@ async function placeOrder ( index )
 {
   const product = products[ index ];
   const quantity = quantities[ index ];
-  console.log(product)
-  console.log(quantity)
 
   if ( quantity > 0 )
   {
