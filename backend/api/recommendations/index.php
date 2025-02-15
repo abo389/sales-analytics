@@ -13,8 +13,7 @@ if ($method == "GET") {
     $orders[] = $row;
   }
 
-  // Set up DeepSeek API
-  $deepSeekKey = "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";
+  // $deepSeekKey = "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";
   $prompt = "Given this sales data: " . json_encode($orders) . " which products should we promote for higher revenue?";
 
   // cURL request to DeepSeek
