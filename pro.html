@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Product Table</title>
+    <link rel="stylesheet" href="css/pro.css">
+  </head>
+
+      <script src="js/pro.js"></script>
+
+  <body>
+
+    <div class="container">
+      <h1>Product List</h1>
+      <div class="city-filter">
+        <input type="text"
+               id="city-input"
+               placeholder="Enter city name">
+        <button onclick="filterByCity()">Filter by City</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+
+  </body>
+
+</html>

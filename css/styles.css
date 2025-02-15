@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  color: #444;
+}
+
+.analytics, .recommendations, .orders {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+}
+
+#order-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#order-list li {
+  background: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+/* Add these styles to your existing CSS */
+#top-products-table {
+  width: 50%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#top-products-table th,
+#top-products-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#top-products-table th {
+  background-color: #f4f4f9;
+  font-weight: bold;
+}
+
+#top-products-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
