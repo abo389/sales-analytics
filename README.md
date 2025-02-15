@@ -1,8 +1,3 @@
-Here’s a well-structured `README.md` for your **Sales Analytics** repository. It includes instructions for setting up the project, running the backend, and starting the development server.
-
----
-
-```markdown
 # Sales Analytics
 
 This repository contains a **Sales Analytics** application that helps you analyze sales data. It uses SQLite for the database, PHP for the backend, and a simple web interface for visualization.
