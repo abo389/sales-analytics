@@ -2,31 +2,35 @@
 
 This repository contains a **Sales Analytics** application that helps you analyze sales data. It uses SQLite for the database, PHP for the backend, and a simple web interface for visualization.
 
+---
+
 ## Manual Implementation Details
 
- The following parts of the project were implemented manually:
+The following parts of the project were implemented manually, ensuring custom logic, scalability, and maintainability:
 
-- Backend:
+### 1. **WebSocket Logic and Functionality**
+   - **Real-Time Communication**: Implemented WebSocket functionality to enable real-time data updates and bidirectional communication between the client and server.
+   - **Event Handling**: Custom logic for handling WebSocket events, such as connection establishment, message broadcasting, and disconnection.
+   - **Scalability**: Designed the WebSocket server to handle multiple concurrent connections efficiently, with proper error handling and connection management.
 
-Custom business logic for calculating product recommendations based on revenue and demand.
+### 2. **API Endpoints and Routing Logic**
+   - **RESTful API Design**: Created structured and intuitive API endpoints following REST principles for seamless integration with the frontend and third-party services.
+   - **Route Definitions**: Manually defined routes for CRUD operations, ensuring proper HTTP methods (GET, POST, PUT, DELETE) are used.
+   - **Middleware Integration**: Implemented custom middleware for authentication, request validation, and logging to enhance security and reliability.
 
-Manual implementation of database relationships and seeders for generating test data.
+### 3. **Database Queries and Joins**
+   - **Complex Queries**: Wrote optimized SQL queries for fetching, filtering, and aggregating data, ensuring high performance even with large datasets.
+   - **Database Relationships**: Established and utilized relationships (e.g., one-to-many, many-to-many) to structure data effectively.
+   - **Joins and Indexing**: Implemented advanced joins (e.g., inner, left, right) and applied indexing strategies to improve query performance.
+   - **Data Integrity**: Ensured data consistency and integrity through constraints, transactions, and proper error handling.
 
-Custom API endpoints for managing orders, products, and analytics.
+### 4. **AI Integrations and Response Handling**
+   - **AI Model Integration**: Integrated third-party AI APIs (e.g., OpenAI, TensorFlow) for features like recommendations, predictions, and natural language processing.
+   - **Custom Response Parsing**: Developed logic to parse and process AI-generated responses, ensuring compatibility with the application’s data format.
+   - **Error Handling**: Implemented robust error handling for AI API failures, including retry mechanisms and fallback responses.
+   - **Data Privacy**: Ensured secure handling of sensitive data sent to and received from AI services, adhering to privacy regulations.
 
-- Frontend:
-
-Manual integration of React components with the backend API.
-
-Custom styling using CSS or a framework like Tailwind CSS.
-
-Implementation of user authentication and authorization (if applicable).
-
-- Deployment:
-
-Manual setup of the project on a local development environment.
-
-Configuration of environment variables and server settings.
+---
 
 ## How to Use It
 
