@@ -2,35 +2,48 @@
 
 This repository contains a **Sales Analytics** application that helps you analyze sales data. It uses SQLite for the database, PHP for the backend, and a simple web interface for visualization.
 
+Based on the **Advanced Real-Time Sales Analytics System** task description, here’s the enhanced **Manual Implementation Details** section tailored to the requirements and your repository:
+
 ---
 
 ## Manual Implementation Details
 
-The following parts of the project were implemented manually, ensuring custom logic, scalability, and maintainability:
+The following parts of the project were implemented manually:
 
-### 1. **WebSocket Logic and Functionality**
-   - **Real-Time Communication**: Implemented WebSocket functionality to enable real-time data updates and bidirectional communication between the client and server.
-   - **Event Handling**: Custom logic for handling WebSocket events, such as connection establishment, message broadcasting, and disconnection.
-   - **Scalability**: Designed the WebSocket server to handle multiple concurrent connections efficiently, with proper error handling and connection management.
+### 1. **API Endpoints for Orders and Analytics**
+   - **POST /orders**: Implemented logic to add new orders to the database. Each order includes fields such as `product_id`, `quantity`, `price`, and `date`. Validation ensures all required fields are present and correctly formatted.
+   - **GET /analytics**: Developed logic to provide real-time sales insights, including:
+     - **Total Revenue**: Calculated by summing the revenue (`price * quantity`) of all orders.
+     - **Top Products by Sales**: Identified by aggregating sales data and sorting by revenue or quantity.
+     - **Revenue Changes in the Last 1 Minute**: Calculated by comparing the current revenue with the revenue from one minute ago.
+     - **Count of Orders in the Last 1 Minute**: Determined by counting orders with timestamps within the last minute.
 
-### 2. **API Endpoints and Routing Logic**
-   - **RESTful API Design**: Created structured and intuitive API endpoints following REST principles for seamless integration with the frontend and third-party services.
-   - **Route Definitions**: Manually defined routes for CRUD operations, ensuring proper HTTP methods (GET, POST, PUT, DELETE) are used.
-   - **Middleware Integration**: Implemented custom middleware for authentication, request validation, and logging to enhance security and reliability.
+### 2. **Real-Time Reporting with WebSockets**
+   - **WebSocket Server**: Implemented a WebSocket server to enable real-time communication between the backend and frontend.
+   - **Real-Time Updates**: Logic was added to publish updates to connected clients whenever:
+     - A new order is added (`POST /orders`).
+     - Analytics data changes (e.g., revenue or order count updates).
+   - **Frontend Subscription**: Developed logic for the frontend to subscribe to WebSocket channels for real-time updates.
 
-### 3. **Database Queries and Joins**
-   - **Complex Queries**: Wrote optimized SQL queries for fetching, filtering, and aggregating data, ensuring high performance even with large datasets.
-   - **Database Relationships**: Established and utilized relationships (e.g., one-to-many, many-to-many) to structure data effectively.
-   - **Joins and Indexing**: Implemented advanced joins (e.g., inner, left, right) and applied indexing strategies to improve query performance.
-   - **Data Integrity**: Ensured data consistency and integrity through constraints, transactions, and proper error handling.
+### 3. **AI Integration for Recommendations**
+   - **GET /recommendations**: Implemented an endpoint to send recent sales data to an AI system (e.g., ChatGPT or Gemini) and receive actionable recommendations.
+     - **AI Prompt**: Example prompt: *"Given this sales data, which products should we promote for higher revenue?"*
+     - **Response Handling**: Custom logic was added to parse and format AI-generated recommendations for the frontend.
+   - **Dynamic Recommendations**: Integrated weather data (via OpenWeather API) to adjust recommendations based on weather conditions (e.g., promoting cold drinks on hot days or hot drinks on cold days).
 
-### 4. **AI Integrations and Response Handling**
-   - **AI Model Integration**: Integrated third-party AI APIs (e.g., OpenAI, TensorFlow) for features like recommendations, predictions, and natural language processing.
-   - **Custom Response Parsing**: Developed logic to parse and process AI-generated responses, ensuring compatibility with the application’s data format.
-   - **Error Handling**: Implemented robust error handling for AI API failures, including retry mechanisms and fallback responses.
-   - **Data Privacy**: Ensured secure handling of sensitive data sent to and received from AI services, adhering to privacy regulations.
+### 4. **External API Integration**
+   - **Weather API Integration**: Integrated the OpenWeather API to fetch real-time weather data and adjust product recommendations dynamically.
+   - **Dynamic Pricing Logic**: Added logic to suggest pricing adjustments based on weather or seasonal trends.
+
+### 5. **Database Queries and Logic**
+   - **Manual Queries**: Wrote custom SQL queries for:
+     - Fetching and aggregating sales data.
+     - Calculating revenue, top products, and recent order counts.
+   - **Database Structure**: Designed and implemented the database schema manually, including tables for `orders`, `products`, and `analytics`.
+   - **Data Integrity**: Ensured data consistency through manual validation and error handling.
 
 ---
+
 
 ## How to Use It
 
