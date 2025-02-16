@@ -64,5 +64,17 @@ fetch( 'http://localhost:8000/backend/api/recommendations' )
   .then( ( response ) => response.json() )
   .then( ( data ) =>
   {
-    aiRecommendationEl.textContent = data.data;
+    list = "";
+    data.forEach( e =>
+    {
+      let keys = Object.keys( e );
+      let values = Object.values( e );
+      let row = "";
+      for ( let i = 0; i < keys.length; i++ )
+      {
+        row += keys[i]+": "+values[i]+", ";
+      }
+      list += `<li>${row}</li>`
+    });
+    aiRecommendationEl.innerHTML = list;
   } );

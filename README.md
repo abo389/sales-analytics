@@ -2,6 +2,32 @@
 
 This repository contains a **Sales Analytics** application that helps you analyze sales data. It uses SQLite for the database, PHP for the backend, and a simple web interface for visualization.
 
+## Manual Implementation Details
+
+ The following parts of the project were implemented manually:
+
+- Backend:
+
+Custom business logic for calculating product recommendations based on revenue and demand.
+
+Manual implementation of database relationships and seeders for generating test data.
+
+Custom API endpoints for managing orders, products, and analytics.
+
+- Frontend:
+
+Manual integration of React components with the backend API.
+
+Custom styling using CSS or a framework like Tailwind CSS.
+
+Implementation of user authentication and authorization (if applicable).
+
+- Deployment:
+
+Manual setup of the project on a local development environment.
+
+Configuration of environment variables and server settings.
+
 ## How to Use It
 
 Follow these steps to set up and run the project locally.
@@ -52,3 +78,11 @@ http://localhost:8000
 ### 5. Explore the Application
 
 You can now explore the Sales Analytics application. The interface allows you to view and analyze sales data.
+
+## How to Use It
+
+You can test api by this commend:
+
+```bash
+php backend/vendor/bin/phpunit backend/Tests
+```

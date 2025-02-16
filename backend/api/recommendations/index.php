@@ -13,16 +13,14 @@ if ($method == "GET") {
     $orders[] = $row;
   }
 
-  // Set up DeepSeek API
-  // $deepSeekKey = "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";
-  $deepSeekKey = "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";
-  $prompt = "Given this sales data: " . json_encode($orders) . " which products should we promote for higher revenue?";
+  // $Key = "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";
+  $prompt = "Given this sales data: " . json_encode($orders) . " which products should we promote for higher revenue i want json respons only";
 
   // cURL request to DeepSeek
   $ch = curl_init("https://models.github.ai/inference/chat/completions");
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "Authorization: Bearer $deepSeekKey",
+    "Authorization: Bearer $Key",
     "Content-Type: application/json"
   ]);
   curl_setopt($ch, CURLOPT_POST, true);
@@ -40,5 +38,7 @@ if ($method == "GET") {
 
   $content = $response['choices'][0]['message']['content'];
 
-  echo json_encode(['data' => $content]);
+  $content = substr($content, 7);
+  $content = substr($content, 0, -4);
+  echo $content;
 }
