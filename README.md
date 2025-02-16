@@ -96,7 +96,7 @@ http://localhost:8000
 
 You can now explore the Sales Analytics application. The interface allows you to view and analyze sales data.
 
-## How to Use It
+## How to Test It
 
 You can test api by this commend:
 
