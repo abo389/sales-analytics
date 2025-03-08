@@ -1,5 +1,8 @@
 <?php
 header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+
+require_once '../../Token.php';
 
 $db = new SQLite3('../../database/sales.db');
 
@@ -13,11 +16,11 @@ if ($method == "GET") {
     $orders[] = $row;
   }
 
-  // $Key = "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";
+  $Key = $API_KEY;
   $prompt = "Given this sales data: " . json_encode($orders) . " which products should we promote for higher revenue i want json respons only";
 
   // cURL request to DeepSeek
-  $ch = curl_init("https://models.github.ai/inference/chat/completions");
+  $ch = curl_init("https://models.inference.ai.azure.com/chat/completions");
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_HTTPHEADER, [
     "Authorization: Bearer $Key",

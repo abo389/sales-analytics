@@ -111,3 +111,18 @@
       .city-filter button:hover {
         background-color: #0056b3;
       }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+
+      .header a {
+        color: #fff;
+        text-decoration: none;
+        background-color: #333;
+        padding: 10px 15px;
+        border-radius: 10px;
+      }

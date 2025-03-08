@@ -24,6 +24,20 @@ h1, h2 {
   overflow: auto;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+  background-color: #333;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
 #order-list {
   list-style-type: none;
   padding: 0;
