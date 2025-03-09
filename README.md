@@ -4,6 +4,12 @@ This repository contains a **Sales Analytics** application that helps you analyz
 
 ---
 
+## Database schema
+https://drawsql.app/teams/903921/diagrams/sales-analytics
+
+
+---
+
 
 ## How to Use It
 
